@@ -6,32 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link href="https://unpkg.com/cirrus-ui" type="text/css" rel="stylesheet"/>
-      <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet"/>
-      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"/>
-      <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous" ></script> 
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous" ></script> 
 
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <title>Results</title>
 </head>
 
 <body>
     
     <header>
-        <div class="row p-3 text-align-center">
+        <div class="row p-3 text-justify-center">
             <h1>THIS IS THE HEADER</h1>
         </div>
     </header>
 
-    <div class="container">
+    <div class="container bg-dark">
         <div class="row col-12">
             <div class="col-4">
-                <div class="frame">
-                    <div class="frame__header" style="background: #eee; padding: 1rem; margin: 1rem">
+                <div class="frame u-border-2 border-color-white bg-primary">
+                    <div class="frame__header bg-gray-100 p-2 m-2">
+                        <div class="frame__title u-text-center">Restaurant Name</div>
+                        <div class="frame__subtitle u-text-center">Rating</div>
+                        <!-- <div class="frame__subtitle u-text-center">This is the frame header.</div> -->
+                    </div>
+                    <div class="frame__body bg-gray-100 p-2 m-2">
+                        <div class="frame__title u-text-center">Reviewer UserName</div>
+                        <div class="frame__subtitle u-text-center">
+                            REVIEWER RATING
+                        </div>
+                        <blockquote class="u-text-center">
+                            REVIEW BLOCK TEXT REVIEW BLOCK TEXT REVIEW BLOCK TEXT REVIEW BLOCK TEXT REVIEW BLOCK TEXT 
+                            REVIEW BLOCK TEXT REVIEW BLOCK TEXT REVIEW BLOCK TEXT REVIEW BLOCK TEXT REVIEW BLOCK TEXT 
+                        </blockquote>
+                    </div>
+                    <div class="frame__footer bg-gray-100 p-2 m-2">
+                        <div class="frame__title u-text-center">VISIT RESTAURANT</div>
+                        <div class="frame__subtitle u-text-center">SOMETHING ELSE</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="frame u-border-2 border-color-white bg-primary">
+                    <div class="frame__header bg-gray-100 p-2 m-2">
                         <div class="frame__title u-text-center">Frame Title</div>
                         <div class="frame__subtitle u-text-center">Frame Subtitle</div>
                         <div class="frame__subtitle u-text-center">This is the frame header.</div>
                     </div>
-                    <div class="frame__body" style="background: #eee; padding: 1rem; margin: 1rem">
+                    <div class="frame__body bg-gray-100 p-2 m-2">
                         <div class="frame__title u-text-center">Frame Body</div>
                         <div class="frame__subtitle u-text-center">
                             Insert any component here, including a frame navigation menu using<!-- -->
@@ -42,7 +68,7 @@
                             The text-white margins between the gray boxes is to demonstrate how the frame sub sections are separated.
                         </blockquote>
                     </div>
-                    <div class="frame__footer" style="background: #eee; padding: 1rem; margin: 1rem">
+                    <div class="frame__footer bg-gray-100 p-2 m-2">
                         <div class="frame__title u-text-center">Frame Footer</div>
                         <div class="frame__subtitle u-text-center">Takes up the bottom of the frame.</div>
                     </div>
@@ -50,13 +76,13 @@
             </div>
 
             <div class="col-4">
-                <div class="frame">
-                    <div class="frame__header" style="background: #eee; padding: 1rem; margin: 1rem">
+                <div class="frame u-border-2 border-color-white bg-primary">
+                    <div class="frame__header bg-gray-100 p-2 m-2">
                         <div class="frame__title u-text-center">Frame Title</div>
                         <div class="frame__subtitle u-text-center">Frame Subtitle</div>
                         <div class="frame__subtitle u-text-center">This is the frame header.</div>
                     </div>
-                    <div class="frame__body" style="background: #eee; padding: 1rem; margin: 1rem">
+                    <div class="frame__body bg-gray-100 p-2 m-2">
                         <div class="frame__title u-text-center">Frame Body</div>
                         <div class="frame__subtitle u-text-center">
                             Insert any component here, including a frame navigation menu using<!-- -->
@@ -67,32 +93,7 @@
                             The text-white margins between the gray boxes is to demonstrate how the frame sub sections are separated.
                         </blockquote>
                     </div>
-                    <div class="frame__footer" style="background: #eee; padding: 1rem; margin: 1rem">
-                        <div class="frame__title u-text-center">Frame Footer</div>
-                        <div class="frame__subtitle u-text-center">Takes up the bottom of the frame.</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="frame">
-                    <div class="frame__header" style="background: #eee; padding: 1rem; margin: 1rem">
-                        <div class="frame__title u-text-center">Frame Title</div>
-                        <div class="frame__subtitle u-text-center">Frame Subtitle</div>
-                        <div class="frame__subtitle u-text-center">This is the frame header.</div>
-                    </div>
-                    <div class="frame__body" style="background: #eee; padding: 1rem; margin: 1rem">
-                        <div class="frame__title u-text-center">Frame Body</div>
-                        <div class="frame__subtitle u-text-center">
-                            Insert any component here, including a frame navigation menu using<!-- -->
-                            <code>frame-nav</code>. The frame will auto-expand and if a specific height is set, a scrollbar will appear
-                            to take care of overflow.
-                        </div>
-                        <blockquote class="u-text-center">
-                            The text-white margins between the gray boxes is to demonstrate how the frame sub sections are separated.
-                        </blockquote>
-                    </div>
-                    <div class="frame__footer" style="background: #eee; padding: 1rem; margin: 1rem">
+                    <div class="frame__footer bg-gray-100 p-2 m-2">
                         <div class="frame__title u-text-center">Frame Footer</div>
                         <div class="frame__subtitle u-text-center">Takes up the bottom of the frame.</div>
                     </div>

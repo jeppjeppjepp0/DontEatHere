@@ -1,7 +1,20 @@
 /* :root{
    
 } */
+h1 {
+    text-align: center;
+    margin: 15px;
+}
 
 .border-color-white{
     border-color: white;
+}
+
+.btn{
+    justify-items: center;
+}
+
+.inputArea{
+   
+    text-align: center;
 }

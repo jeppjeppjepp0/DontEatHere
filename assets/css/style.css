@@ -1,13 +1,21 @@
 :root{
    background-color: lightgrey;
+   font-family: 'Bebas Neue', cursive;
+   
 }
 h1 {
     text-align: center;
     margin: 15px;
+    
+}
+
+h2 {
+    text-align: center;
 }
 
 .border-color-white{
     border-color: white;
+   
 }
 
 .btn{
@@ -28,5 +36,30 @@ h1 {
 }
 
 #cityname{
-    border: dashed black;
+
+    border: solid black;
+}
+
+.card-container {
+border: solid black;
+background-color:white;
+}
+
+img {
+    border-radius: 50%;
+}
+
+
+.col-12 {
+    background-image: url(https://4.bp.blogspot.com/-tv-BXr3euA0/USZDKB96duI/AAAAAAAAAjs/bsXGacHzGn0/s1600/IMG_0304.JPG); 
+}
+
+
+footer {
+position: absolute;
+bottom: 0;
+width: 100%;
+text-align: center;
+background-color: lightgray;
+border: dashed black;
 }

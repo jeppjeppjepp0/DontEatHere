@@ -11,7 +11,9 @@ h1 {
 }
 
 .btn{
+    margin-top: 10px;
     justify-items: center;
+    border: solid black;
 }
 
 .inputArea{
@@ -25,5 +27,5 @@ h1 {
 }
 
 #cityname{
-    border: solid black;
+    border: dashed black;
 }

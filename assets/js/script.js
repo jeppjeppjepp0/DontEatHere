@@ -1,5 +1,6 @@
 var inputArea = document.querySelector('#inputArea');
 var cityInput = document.querySelector("#cityName");
+var prevSearchEl = document.querySelector("#prev-search");
 let varLat;
 let varLon;
 let varCity;
@@ -36,7 +37,7 @@ var getCityLocation = function(city){
 
                 pullPrevSearches();
 
-                prevSearches = prevSearches.concat({varCity, varLat, varLon});
+                prevSearches = prevSearches.concat({city: varCity, lat: varLat, lon: varLon});
                 console.log(prevSearches);
 
                 // Saving data to local storage
@@ -45,6 +46,8 @@ var getCityLocation = function(city){
                 localStorage.setItem('lon', varLon);
 
                 localStorage.setItem('prevSearches', JSON.stringify(prevSearches));
+
+                document.location = "./result.html"
             });
         } else {
             alert('Error: unable to find city');
@@ -53,14 +56,29 @@ var getCityLocation = function(city){
 }
 
 function pullPrevSearches(){
-    if (localStorage.getItem("prevSearchArray")){
+    if (localStorage.getItem("prevSearches")){
         prevSearches = JSON.parse(localStorage.getItem('prevSearches'));
+        console.log(prevSearches);
         for (var i = 0; i < prevSearches.length; i++){
             // print stuff
+            // make button
+            var newBtn = document.createElement("button");
+            // add text
+            newBtn.textContent = prevSearches[i].city;
+            // append
+            prevSearchEl.appendChild(newBtn);
         }
+    }
+    else {
+        prevSearches = [];
     }
 }
 
+function handleBtnClick(){
+    
+}
 
+pullPrevSearches();
 inputArea.addEventListener('submit', formSubmitHandler);
+prevSearchEl.addEventListener('click', handleBtnClick);
  

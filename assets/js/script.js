@@ -10,6 +10,7 @@ var formSubmitHandler = function (event) {
       
         if (cityname) {
           getCityLocation(cityname);
+          
       
         } else {
           alert('Please enter proper city name');
@@ -35,7 +36,7 @@ var formSubmitHandler = function (event) {
               // Saving data to local storage
       localStorage.setItem('cityName', varCity);
       localStorage.setItem('lat', varLat);
-      localStorage.setItem('long', varLon);
+      localStorage.setItem('lon', varLon);
         });
       } else {
         alert('Error: unable to find city');
@@ -44,8 +45,8 @@ var formSubmitHandler = function (event) {
 }
 
 var prevSearches = [];
-{cityName, lat, long};
+{varCity, varLat, varLon};
 localStorage.setItem('key', JSON.stringify(prevSearches));
 
-inputArea.addEventListener('click', formSubmitHandler);
+inputArea.addEventListener('submit', formSubmitHandler);
  

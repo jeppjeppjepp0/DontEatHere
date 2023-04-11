@@ -19,11 +19,13 @@ h2 {
 }
 
 .btn{
+    margin-top: 10px;
     justify-items: center;
-   
+    border: solid black;
+    color: white;
 }
 
-.inputArea{
+#inputArea{
     margin-top: 100px;
     text-align: center;
 }
@@ -34,6 +36,7 @@ h2 {
 }
 
 #cityname{
+
     border: solid black;
 }
 
@@ -58,4 +61,5 @@ bottom: 0;
 width: 100%;
 text-align: center;
 background-color: lightgray;
+border: dashed black;
 }

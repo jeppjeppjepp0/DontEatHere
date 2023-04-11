@@ -2,6 +2,7 @@ var inputArea = document.querySelector('#inputArea');
 var cityInput = document.querySelector("#cityName");
 let varLat
 let varLon
+let varCity
 
 var formSubmitHandler = function (event) {
     event.preventDefault();
@@ -27,8 +28,14 @@ var formSubmitHandler = function (event) {
         //   getWeather(data, varLat, varLon);
           varLat = data[0].lat;
           varLon = data[0].lon;
+          varCity = data[0].name;
+          console.log(varCity)
           console.log(varLat)
           console.log(varLon)
+              // Saving data to local storage
+      localStorage.setItem('cityName', varCity);
+      localStorage.setItem('lat', varLat);
+      localStorage.setItem('long', varLon);
         });
       } else {
         alert('Error: unable to find city');
@@ -36,6 +43,9 @@ var formSubmitHandler = function (event) {
     })
 }
 
+var prevSearches = [];
+{cityName, lat, long};
+localStorage.setItem('key', JSON.stringify(prevSearches));
 
 inputArea.addEventListener('click', formSubmitHandler);
  

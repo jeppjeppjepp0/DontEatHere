@@ -1,6 +1,7 @@
 var inputArea = document.querySelector('#inputArea');
 var cityInput = document.querySelector("#cityName");
 var prevSearchEl = document.querySelector("#prev-search");
+var clearBtnEl = document.querySelector("#clear-history-btn");
 let varLat;
 let varLon;
 let varCity;
@@ -14,7 +15,7 @@ function pullPrevSearches(){
             // make button
             var newBtn = document.createElement("button");
             // add text
-            newBtn.setAttribute("class", "prev-search-btn");
+            newBtn.setAttribute("class", "prev-search-btn"); //for styling
             newBtn.textContent = prevSearches[i].city;
             // append
             prevSearchEl.appendChild(newBtn);
@@ -73,7 +74,7 @@ var getCityLocation = function(city){
     });
 }
 
-function handleBtnClick(event){
+function handleBtnSearch(event){
     var clickedCity = event.target.textContent;
 
     var cityUrl = 'https://api.openweathermap.org/geo/1.0/direct?q='+ clickedCity + '&appid=e7061ed9c868477223ac6802888315d2';
@@ -99,7 +100,20 @@ function handleBtnClick(event){
     });
 }
 
+function handleClear(){
+    prevSearches = [];
+    localStorage.setItem('prevSearches', JSON.stringify(prevSearches));
+
+    var prevSearchLength = prevSearchEl.children.length;
+
+    for (var i = 0; i < prevSearchLength; i++){
+        // console.log(prevSearchEl.children[i]);
+        prevSearchEl.children[0].remove();
+    }
+}
+
 pullPrevSearches();
 inputArea.addEventListener('submit', formSubmitHandler);
-prevSearchEl.addEventListener('click', handleBtnClick);
+prevSearchEl.addEventListener('click', handleBtnSearch);
+clearBtnEl.addEventListener('click', handleClear);
  

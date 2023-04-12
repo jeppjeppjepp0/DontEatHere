@@ -6,6 +6,36 @@ let varLon;
 let varCity;
 let prevSearches = [];
 
+function pullPrevSearches(){
+    if (localStorage.getItem("prevSearches")){
+        prevSearches = JSON.parse(localStorage.getItem('prevSearches'));
+        console.log(prevSearches);
+        for (var i = 0; i < prevSearches.length; i++){
+            // make button
+            var newBtn = document.createElement("button");
+            // add text
+            newBtn.setAttribute("class", "prev-search-btn");
+            newBtn.textContent = prevSearches[i].city;
+            // append
+            prevSearchEl.appendChild(newBtn);
+        }
+    }
+    else {
+        prevSearches = [];
+    }
+}
+
+function storePrevSearches(currCity, currLat, currLon){
+    prevSearches = prevSearches.concat({city: currCity, currLat: currLat, lon: currLon});
+    console.log(prevSearches);
+    localStorage.setItem('prevSearches', JSON.stringify(prevSearches));
+}
+
+function storeCurrSearch(currCity, currLat, currLon){
+    localStorage.setItem('cityName', currCity);
+    localStorage.setItem('lat', currLat);
+    localStorage.setItem('lon', currLon);
+}
 
 var formSubmitHandler = function (event) {
     event.preventDefault();
@@ -25,27 +55,15 @@ var getCityLocation = function(city){
     .then(function (response) {
         if (response.ok) {
             response.json().then(function (data) {
-                console.log(data)
+                console.log(data);
 
                 varLat = data[0].lat;
                 varLon = data[0].lon;
                 varCity = data[0].name;
 
-                console.log(varCity);
-                console.log(varLat);
-                console.log(varLon);
-
                 pullPrevSearches();
-
-                prevSearches = prevSearches.concat({city: varCity, lat: varLat, lon: varLon});
-                console.log(prevSearches);
-
-                // Saving data to local storage
-                localStorage.setItem('cityName', varCity);
-                localStorage.setItem('lat', varLat);
-                localStorage.setItem('lon', varLon);
-
-                localStorage.setItem('prevSearches', JSON.stringify(prevSearches));
+                storePrevSearches(varCity, varLat, varLon);
+                storeCurrSearch(varCity, varLat, varLon);
 
                 document.location = "./result.html"
             });
@@ -55,27 +73,30 @@ var getCityLocation = function(city){
     });
 }
 
-function pullPrevSearches(){
-    if (localStorage.getItem("prevSearches")){
-        prevSearches = JSON.parse(localStorage.getItem('prevSearches'));
-        console.log(prevSearches);
-        for (var i = 0; i < prevSearches.length; i++){
-            // print stuff
-            // make button
-            var newBtn = document.createElement("button");
-            // add text
-            newBtn.textContent = prevSearches[i].city;
-            // append
-            prevSearchEl.appendChild(newBtn);
-        }
-    }
-    else {
-        prevSearches = [];
-    }
-}
+function handleBtnClick(event){
+    var clickedCity = event.target.textContent;
 
-function handleBtnClick(){
-    
+    var cityUrl = 'https://api.openweathermap.org/geo/1.0/direct?q='+ clickedCity + '&appid=e7061ed9c868477223ac6802888315d2';
+
+    fetch(cityUrl)
+    .then(function (response) {
+        if (response.ok) {
+            response.json().then(function (data) {
+                console.log(data);
+
+                varLat = data[0].lat;
+                varLon = data[0].lon;
+                varCity = data[0].name;
+
+                // Saving data to local storage
+                storeCurrSearch(varCity, varLat, varLon);
+
+                document.location = "./result.html"
+            });
+        } else {
+            alert('Error: unable to find city');
+        }
+    });
 }
 
 pullPrevSearches();

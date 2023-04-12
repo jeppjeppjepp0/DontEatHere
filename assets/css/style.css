@@ -1,12 +1,11 @@
 :root{
    background-color: lightgrey;
    font-family: 'Bebas Neue', cursive;
-   
 }
+
 h1 {
     text-align: center;
     margin: 15px;
-    
 }
 
 h2 {
@@ -32,23 +31,24 @@ h2 {
 
 .inputlabel{
     font-size: x-large;
-  
 }
 
 #cityname{
-
     border: solid black;
 }
 
 .card-container {
-border: solid black;
-background-color:white;
+    border: solid black;
+    background-color:white;
 }
 
 img {
     border-radius: 50%;
 }
 
+.prev-search-btn{
+    margin: 0.5rem;
+}
 
 .col-12 {
     background-image: url(https://4.bp.blogspot.com/-tv-BXr3euA0/USZDKB96duI/AAAAAAAAAjs/bsXGacHzGn0/s1600/IMG_0304.JPG); 

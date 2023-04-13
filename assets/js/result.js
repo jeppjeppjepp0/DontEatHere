@@ -1,27 +1,24 @@
-var API_KEY = '70Qz_TnQu1CogX0wCS1CoMbduwaXZhLz_Mk2UY8nPdkSjVqwUTphv4secp5O5YT83wQt-DvkZBPAGDfOU25DNxeCrDnlY2kB5MF0tSFbFqMQS-Xy_lflAezsmnQ0ZHYx';
+var API_KEY = 'fsq3b7GK2pzwGDNSHc+R0X6LmzlOcr4+aKCRMEfbmYXljlA=';
 
-var urlParams = new URLSearchParams(window.location.search);
-var latitude = urlParams.get('latitude');
-var longitude = urlParams.get('longitude');
+var latitude = localStorage.getItem("lat");
+var longitude = localStorage.getItem("lon");
 
-var restaurantElements = document.querySelectorAll('.restaurant');
-var cityElement = document.querySelector('#searched-city');
-var cardContainer = document.querySelector('#restaurant-cards');
 
-var searchRestaurants = async (latitude, longitude) => {
-  try {
-    var response = await fetch(`https://api.yelp.com/v3/businesses/search?term=food&latitude=${latitude}&longitude=${longitude}&sort_by=rating&limit=3`, {
+var searchRestaurants = (latitude, longitude) => {
+    return fetch(`https://api.yelp.com/v3/businesses/search?term=food&latitude=${latitude}&longitude=${longitude}&sort_by=rating&limit=3`, {
+
       headers: {
         Authorization: `Bearer ${API_KEY}`,
       },
-    });
-    var data = await response.json();
-    return data.businesses;
-  } catch (error) {
+    })
+    .then(response => response.json())
+    .then(data => data.businesses)
+    .catch(error => {
     console.error(error);
     return null;
-  }
+  });
 };
+
 
 function displayCityName() {
     if(localStorage.getItem('cityName')){

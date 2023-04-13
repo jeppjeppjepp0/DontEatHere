@@ -50,7 +50,7 @@ var formSubmitHandler = function (event) {
 };
 
 var getCityLocation = function(city){
-    var cityUrl = 'https://api.openweathermap.org/geo/1.0/direct?q='+ city + '&appid=e7061ed9c868477223ac6802888315d2';
+    var cityUrl = "https://api.tomtom.com/search/2/geocode/" + city + ".json?key=7dYNPA9FNut879KfPaG83uMkwHPL8rVV"    ;
 
     fetch(cityUrl)
     .then(function (response) {
@@ -58,9 +58,9 @@ var getCityLocation = function(city){
             response.json().then(function (data) {
                 console.log(data);
 
-                varLat = data[0].lat;
-                varLon = data[0].lon;
-                varCity = data[0].name;
+                varLat = data.results[0].position.lat;
+                varLon = data.results[0].position.lon;
+                varCity = data.results[0].address.municipality;
 
                 pullPrevSearches();
                 storePrevSearches(varCity, varLat, varLon);
@@ -77,7 +77,7 @@ var getCityLocation = function(city){
 function handleBtnSearch(event){
     var clickedCity = event.target.textContent;
 
-    var cityUrl = 'https://api.openweathermap.org/geo/1.0/direct?q='+ clickedCity + '&appid=e7061ed9c868477223ac6802888315d2';
+    var cityUrl = "https://api.tomtom.com/search/2/geocode/" + clickedCity + ".json?key=7dYNPA9FNut879KfPaG83uMkwHPL8rVV";
 
     fetch(cityUrl)
     .then(function (response) {
@@ -85,9 +85,9 @@ function handleBtnSearch(event){
             response.json().then(function (data) {
                 console.log(data);
 
-                varLat = data[0].lat;
-                varLon = data[0].lon;
-                varCity = data[0].name;
+                varLat = data.results[0].position.lat;
+                varLon = data.results[0].position.lon;
+                varCity = data.results[0].address.municipality;
 
                 // Saving data to local storage
                 storeCurrSearch(varCity, varLat, varLon);

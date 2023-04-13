@@ -1,4 +1,7 @@
 var API_KEY = 'fsq3b7GK2pzwGDNSHc+R0X6LmzlOcr4+aKCRMEfbmYXljlA=';
+var CLIENT_ID = '24EUE2MY4GC5SVPZRAQNE4BIJ4VWY5Y5EBX3NCAQFVEFNMGM';
+var CLIENT_SECRET = 'XTARJJ2DOUADKOAQ4GZJ1MY5KG53V2EKN3RQXGJBY0SNQXKH';
+
 
 var latitude = localStorage.getItem("lat");
 var longitude = localStorage.getItem("lon");
@@ -8,14 +11,14 @@ var cityElement = document.querySelector('#searched-city');
 var cardContainer = document.querySelector('#restaurant-cards');
 
 var searchRestaurants = (latitude, longitude) => {
-    return fetch(`https://api.yelp.com/v3/businesses/search?term=food&latitude=${latitude}&longitude=${longitude}&sort_by=rating&limit=3`, {
+    return fetch(`https://api.foursquare.com/v2/venues/search?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&ll=${latitude},${longitude}&query=food&sortByPopularity=1&limit=3`, {
 
       headers: {
-        Authorization: `Bearer ${API_KEY}`,
-      },
+        'Content-Type': 'application/json',
+      }
     })
     .then(response => response.json())
-    .then(data => data.businesses)
+    .then(data => data.response.venues)
     .catch(error => {
     console.error(error);
     return null;
@@ -58,6 +61,7 @@ function displayRestaurants() {
 
 displayCityName();
 displayRestaurants();
+searchRestaurants(latitude, longitude);
 
 
 var returnHomeBtn = document.querySelector("#return-home");

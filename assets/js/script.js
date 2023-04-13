@@ -28,6 +28,7 @@ function pullPrevSearches(){
 
 function storePrevSearches(currCity, currLat, currLon){
     prevSearches = prevSearches.concat({city: currCity, currLat: currLat, lon: currLon});
+    prevSearches = _.sortBy(prevSearches, 'city');
     console.log(prevSearches);
     localStorage.setItem('prevSearches', JSON.stringify(prevSearches));
 }
@@ -113,6 +114,8 @@ function handleClear(){
 }
 
 pullPrevSearches();
+
+
 inputArea.addEventListener('submit', formSubmitHandler);
 prevSearchEl.addEventListener('click', handleBtnSearch);
 clearBtnEl.addEventListener('click', handleClear);

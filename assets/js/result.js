@@ -3,6 +3,9 @@ var API_KEY = 'fsq3b7GK2pzwGDNSHc+R0X6LmzlOcr4+aKCRMEfbmYXljlA=';
 var latitude = localStorage.getItem("lat");
 var longitude = localStorage.getItem("lon");
 
+var restaurantElements = document.querySelectorAll('.restaurant');
+var cityElement = document.querySelector('#searched-city');
+var cardContainer = document.querySelector('#restaurant-cards');
 
 var searchRestaurants = (latitude, longitude) => {
     return fetch(`https://api.yelp.com/v3/businesses/search?term=food&latitude=${latitude}&longitude=${longitude}&sort_by=rating&limit=3`, {

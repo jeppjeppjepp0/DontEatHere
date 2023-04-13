@@ -7,9 +7,9 @@
 
     <link href="https://unpkg.com/cirrus-ui" type="text/css" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"/>
-      <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous" ></script>
-      <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"/>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous" ></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
 
     <title>Document</title>
 </head>
@@ -42,22 +42,27 @@
             <button type="submit" class="btn bg-primary">Search</button>
         </form>
 
-        <div class="menu m-2" id="prev-search">
-            <p class="menu-title uppercase">Previous searches</p>
-            <!-- <button class="btn text-dark">EX text</button> -->
+        <div class="menu m-2" >
+            <p class="menu-title uppercase font-bold">
+                Previous searches
+                <button class="btn text-dark font-normal m-2" id="clear-history-btn">Clear Search History</button>
+            </p>
+            <div class="menu-item" id="prev-search">
+                <!-- buttons filled here -->
+            </div>
         </div>
     </div>
+
+    <footer>
+        <div class="row">
+            <div class="col-12">
+                &copy; Worst Reviews in Your City! All Rights Reserved.
+             </div>
+        </div>
+    </footer>
    
+    <script src="https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
-
-<footer>
-    <div class="row">
-        <div class="col-12">
-            &copy; Worst Reviews in Your City! All Rights Reserved.
-         </div>
-    </div>
-
-    <script src="./assets/js/script.js"></script>;
-</footer>
 
 </html>

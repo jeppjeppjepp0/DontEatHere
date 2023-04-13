@@ -27,13 +27,16 @@ function pullPrevSearches(){
 }
 
 function storePrevSearches(currCity, currLat, currLon){
+    // add current city to array
     prevSearches = prevSearches.concat({city: currCity, currLat: currLat, lon: currLon});
-    prevSearches = _.sortBy(prevSearches, 'city');
-    console.log(prevSearches);
+    prevSearches = _.sortBy(prevSearches, 'city'); // alphabetize
+    console.log(prevSearches); // to see result
+    // store to local storage
     localStorage.setItem('prevSearches', JSON.stringify(prevSearches));
 }
 
 function storeCurrSearch(currCity, currLat, currLon){
+    // store current city information for results page
     localStorage.setItem('cityName', currCity);
     localStorage.setItem('lat', currLat);
     localStorage.setItem('lon', currLon);

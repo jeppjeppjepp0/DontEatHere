@@ -1,84 +1,47 @@
 # Never Miss a Sunset or Sunrise Again!
 
+## Technology Used 
+
+HTML
+CSS
+JavaScript
+Cirrus.ui/layout
+JQuery
+TomTom
+GoogleFonts
+_.JS
+
 ## Description 
 
-Your GitHub profile is an extremely important aspect of your public identity as a developer. A well-crafted one allows you to show off your work to other developers as well as potential employers. An important component of your GitHub profile—and one that many new developers often overlook—is the README.md file.
+The motivation behind this project was to create a webpage that would inform people of the best times to see the sunrises and sunsets. Included in the page was also the sunrise and sunset of the Summer Solstice. Within the webpage, users can search up any city and will receive the exact time at which the sunrises and sets as well the total length of day for the current day and the Summer Solstice.
 
-The quality of a README often differentiates a good project from a bad project. A good one takes advantage of the opportunity to explain and showcase what your application does, justify the technologies used, and even talk about some of the challenges you faced and features you hope to implement in the future. A good README helps you stand out among the large crowd of developers putting their work on GitHub.
-
-There's no one right way to structure a good README. There is one very wrong way, however, and that is to not include a README at all or to create a very anemic one. This guide outlines a few best practices. As you progress in your career, you will develop your own ideas about what makes a good README.
-
-At a minimum, your project README needs a title and a short description explaining the what, why, and how. What was your motivation? Why did you build this project? (Note: The answer is not "Because it was a homework assignment.") What problem does it solve? What did you learn? What makes your project stand out? 
-
-Lastly, if your project is deployed, include a link to the deployed application here.
-
-If you're new to Markdown, read the GitHub guide on [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
-
-If you need an example of a good README, check out [the VSCode repository](https://github.com/microsoft/vscode).
-
-
-## Table of Contents (Optional)
-
-If your README is very long, add a table of contents to make it easy for users to find what they need.
-
-* [Installation](#installation)
-* [Usage](#usage)
-* [Credits](#credits)
-* [License](#license)
-
-
-## Installation
-
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+https://jeppjeppjepp0.github.io/DontEatHere/
 
 
 ## Usage 
 
-Provide instructions and examples for use. Include screenshots as needed. 
+The page we created is a very user friendly page that is easy to navigate through and take you straight to the results. Users will go to the site and type in whateer city they'd like, it could be one within their neighborhood or one across the country, and the will immediately receive the exact time for both the current day and the Summer Solstice.
 
-To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
-
-```md
-![alt text](assets/images/screenshot.png)
-```
-
+![example](./assets/IMG.png)
 
 ## Credits
 
-List your collaborators, if any, with links to their GitHub profiles.
+Kaiden Parcher https://github.com/Kaidenparcher
+Jedd Javier https://github.com/jeppjeppjepp0
+Scarlett Borroel https://github.com/Scar919
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 
-If you followed tutorials, include links to those here as well.
+Third party websites that we used to achieve our results 
+
+https://sunrise-sunset.org/api
+https://www.tomtom.com
+
+https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap
+https://use.fontawesome.com/releases/v5.2.0/css/all.css
+https://code.jquery.com/jquery-2.2.4.min.js
+https://cdn.jsdelivr.net/npm/underscore@1.13.6/underscore-umd-min.js
 
 
 ## License
 
-The last section of a good README is a license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, use [https://choosealicense.com/](https://choosealicense.com/)
-
-
----
-
-🏆 The sections listed above are the minimum for a good README, but your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
-
-## Badges
-
-![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-
-Badges aren't _necessary_, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
-
-## Features
-
-If your project has a lot of features, consider adding a heading called "Features" and listing them there.
-
-## Contributing
-
-If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own.
-
-## Tests
-
-Go the extra mile and write tests for your application. Then provide examples on how to run them.
-
----
-
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+N/A

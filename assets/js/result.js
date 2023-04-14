@@ -5,6 +5,10 @@ var sunriseElement = document.querySelector('#sunrise-time');
 var sunsetElement = document.querySelector('#sunset-time');
 var cityElement = document.querySelector('#searched-city');
 
+
+var sunInfo1;
+var sunInfo2;
+
 function displayCityName() {
     if(localStorage.getItem('cityName')){
         cityElement.textContent = localStorage.getItem('cityName');
@@ -15,27 +19,32 @@ function displayCityName() {
 
 function displaySunriseSunset() {
 
-    var sunInfo1;
-    var sunInfo2;
-
-    searchSunriseSunset(latitude, longitude, "today");
-    sunInfo1 = JSON.parse(localStorage.getItem('starInfo'));
-    searchSunriseSunset(latitude, longitude, "2023-07-21");
-    sunInfo2 = JSON.parse(localStorage.getItem('starInfo'));
-        console.log(sunInfo1);
-        console.log(sunInfo2);
+    console.log(sunInfo1);
+    console.log(sunInfo2);
     document.querySelector("#sunrise-1").textContent = sunInfo1.sunrise;
     document.querySelector("#sunrise-2").textContent = sunInfo2.sunrise;
-
-
 };
 
-function searchSunriseSunset(lat, lon, day){
-    fetch('https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lon + '&date=' + day)
+function searchSunriseSunsetToday(lat, lon){
+    fetch('https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lon + '&date=today')
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            localStorage.setItem('starInfo', JSON.stringify(data.results));
+            localStorage.setItem('sunInfo1', JSON.stringify(data.results));
+        })
+        .catch(error => {
+            console.error(error);
+            return null;
+        });
+}
+
+function searchSunriseSunsetEquinox(lat, lon){
+    fetch('https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lon + '&date=2023-07-21')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            localStorage.setItem('sunInfo2', JSON.stringify(data.results));
+
         })
         .catch(error => {
             console.error(error);
@@ -44,6 +53,14 @@ function searchSunriseSunset(lat, lon, day){
 }
 
 displayCityName();
+
+
+searchSunriseSunsetToday(latitude, longitude);
+sunInfo1 = JSON.parse(localStorage.getItem('sunInfo1'));
+
+searchSunriseSunsetEquinox(latitude, longitude, "2023-07-21");
+sunInfo2 = JSON.parse(localStorage.getItem('sunInfo2'));
+
 displaySunriseSunset();
 
 

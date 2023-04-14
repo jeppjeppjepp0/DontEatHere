@@ -5,6 +5,7 @@ var sunriseElement = document.querySelector('#sunrise-time');
 var sunsetElement = document.querySelector('#sunset-time');
 var cityElement = document.querySelector('#searched-city');
 
+
 var sunInfo1;
 var sunInfo2;
 
@@ -17,6 +18,7 @@ function displayCityName() {
 };
 
 function displaySunriseSunset() {
+
     console.log(sunInfo1);
     console.log(sunInfo2);
     document.querySelector("#sunrise-1").textContent = sunInfo1.sunrise;
@@ -42,6 +44,7 @@ function searchSunriseSunsetEquinox(lat, lon){
         .then(data => {
             console.log(data);
             localStorage.setItem('sunInfo2', JSON.stringify(data.results));
+
         })
         .catch(error => {
             console.error(error);
@@ -50,6 +53,7 @@ function searchSunriseSunsetEquinox(lat, lon){
 }
 
 displayCityName();
+
 
 searchSunriseSunsetToday(latitude, longitude);
 sunInfo1 = JSON.parse(localStorage.getItem('sunInfo1'));

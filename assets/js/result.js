@@ -1,67 +1,52 @@
-var API_KEY = 'fsq3b7GK2pzwGDNSHc+R0X6LmzlOcr4+aKCRMEfbmYXljlA=';
-var CLIENT_ID = '24EUE2MY4GC5SVPZRAQNE4BIJ4VWY5Y5EBX3NCAQFVEFNMGM';
-var CLIENT_SECRET = 'XTARJJ2DOUADKOAQ4GZJ1MY5KG53V2EKN3RQXGJBY0SNQXKH';
-
-
 var latitude = localStorage.getItem("lat");
 var longitude = localStorage.getItem("lon");
 
-var restaurantElements = document.querySelectorAll('.restaurant');
+var sunriseElement = document.querySelector('#sunrise-time');
+var sunsetElement = document.querySelector('#sunset-time');
 var cityElement = document.querySelector('#searched-city');
-var cardContainer = document.querySelector('#restaurant-cards');
-
-var searchRestaurants = (latitude, longitude) => {
-    return fetch(`https://api.foursquare.com/v2/venues/search?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&ll=${latitude},${longitude}&query=food&sortByPopularity=1&limit=3`, {
-
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    })
-    .then(response => response.json())
-    .then(data => data.response.venues)
-    .catch(error => {
-    console.error(error);
-    return null;
-  });
-};
-
 
 function displayCityName() {
     if(localStorage.getItem('cityName')){
         cityElement.textContent = localStorage.getItem('cityName');
-    }
-    else {
+    }else {
         cityElement.textContent = "UNKNOWN";
     }
 };
 
-function displayRestaurants() {
+function displaySunriseSunset() {
 
-    // var restaurants = await searchRestaurants(latitude, longitude);
-    // restaurantElements.forEach((element, index) => {
-        var nameElement = document.querySelector('.frame__title');
-        var ratingElement = document.querySelector('.frame__subtitle');
-        var userElement = document.querySelector('.frame__body .frame__title');
-        var reviewRatingElement = document.querySelector('.frame__body .frame__subtitle');
-        var reviewTextElement = document.querySelector('.frame__body blockquote');
+    var sunInfo1;
+    var sunInfo2;
+    searchSunriseSunset
 
-        //   nameElement.textContent = restaurants[index].name;
-        //   ratingElement.textContent = `Rating: ${restaurants[index].rating}`;
-        //   userElement.textContent = restaurants[index].reviews[0].user.name;
-        //   reviewRatingElement.textContent = `Rating: ${restaurants[index].reviews[0].rating}`;
-        //   reviewTextElement.textContent = restaurants[index].reviews[0].text;
+    sunInfo1 = searchSunriseSunset(latitude, longitude, "today");
+    sunInfo1 = JSON.parse(localStorage.getItem('sunInfo'));
+    sunInfo2 = searchSunriseSunset(latitude, longitude, "2023-07-21");
+    sunInfo2 = JSON.parse(localStorage.getItem('sunInfo'));
+console.log(sunInfo1);
+console.log(sunInfo2);
+    document.querySelector("#sunrise-1").textContent = sunInfo1.sunrise;
+    document.querySelector("#sunrise-2").textContent = sunInfo2.sunrise;
 
-        console.log(nameElement);
-        console.log(ratingElement);
-        console.log(userElement);
-        console.log(reviewRatingElement);
-        console.log(reviewTextElement);
-    // });
+
 };
 
+function searchSunriseSunset(lat, lon, day){
+    fetch('https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lon + '&date=' + day)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            localStorage.setItem('sunInfo', JSON.stringify(data.results));
+        })
+        .catch(error => {
+            console.error(error);
+            return null;
+        });
+}
+
 displayCityName();
-displayRestaurants();
-searchRestaurants(latitude, longitude);
+displaySunriseSunset();
+
 
 
 var returnHomeBtn = document.querySelector("#return-home");

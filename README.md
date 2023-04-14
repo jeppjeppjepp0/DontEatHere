@@ -1,232 +1,84 @@
-# DontEatHere
-## Project-One
-[Back to Course Content](../../README.md)
+# Never Miss a Sunset or Sunrise Again!
 
------
-### :book: **[Student Resources](student-resources/README.md)**
+## Description 
 
-> `Student Resources` are a great way to explore examples, vocabulary, and resourcesful links related to this section of the class.
+Your GitHub profile is an extremely important aspect of your public identity as a developer. A well-crafted one allows you to show off your work to other developers as well as potential employers. An important component of your GitHub profile—and one that many new developers often overlook—is the README.md file.
 
-> Great for obtaining a better **conceptual understanding** of the course material. 
+The quality of a README often differentiates a good project from a bad project. A good one takes advantage of the opportunity to explain and showcase what your application does, justify the technologies used, and even talk about some of the challenges you faced and features you hope to implement in the future. A good README helps you stand out among the large crowd of developers putting their work on GitHub.
 
-------
-### :dart: **[Code Drills](code-drills/README.md)**
+There's no one right way to structure a good README. There is one very wrong way, however, and that is to not include a README at all or to create a very anemic one. This guide outlines a few best practices. As you progress in your career, you will develop your own ideas about what makes a good README.
 
-> `Code Drills` are a great way to get hands on keyboard, writing syntax, doing work, and encountering problem sets. 
+At a minimum, your project README needs a title and a short description explaining the what, why, and how. What was your motivation? Why did you build this project? (Note: The answer is not "Because it was a homework assignment.") What problem does it solve? What did you learn? What makes your project stand out? 
 
-> Great for obtaining a better **practical understanding** of the course material. 
+Lastly, if your project is deployed, include a link to the deployed application here.
 
------
+If you're new to Markdown, read the GitHub guide on [Mastering Markdown](https://guides.github.com/features/mastering-markdown/).
 
+If you need an example of a good README, check out [the VSCode repository](https://github.com/microsoft/vscode).
 
-### :fire: **[WarmUp Challenge](warm-up-challenge)**
 
-> Get your hands dirty with a daily coding challenge
+## Table of Contents (Optional)
 
------
+If your README is very long, add a table of contents to make it easy for users to find what they need.
 
-### :computer: Activity
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
 
-|  Activities |  Description |
-|:--	|:--
-|[01-Stu_Create-Repository](activities/01-Stu_Create-Repository)| Create a Repository |
-|[02-Stu_Protect-Main](activities/02-Stu_Protect-Main)| Protect Main Branch |
-|[03-Stu_Branching-Pushing](activities/03-Stu_Branching-Pushing)| Git Branching |
-|[04-Stu_Git-Recap](activities/04-Stu_Git-Recap)| Git/Github - A recap |
-|[05-Stu_MVP](activities/05-Stu_MVP)| MVP design |
-|[06_Stu-Issues](activities/06_Stu-Issues)| Github issues |
-|[07-Stu_kanban](activities/07-Stu_kanban)| Kanban board |
-|[08-Stu_Standup](activities/08-Stu_Standup)| Standup |
-|[09-Stu_Continuous-Deployment](activities/09-Stu_Continuous-Deployment)| Continuous Deployment |
 
------
+## Installation
 
+What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
 
 
-## Overview
+## Usage 
 
-Welcome to Project 1! This is an important step in your full-stack journey as you will now use your newly acquired skills and knowledge to build web application from scratch. With your team, you will conceive and execute a design that solves a real-world problem by integrating data received from multiple server-side API requests. Because you will be working collaboratively, you will learn agile development methodologies and implement feature and bug fixes using the git branch workflow and pull requests.
+Provide instructions and examples for use. Include screenshots as needed. 
 
-## Key Topics
+To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative filepath, add it to your README using the following syntax:
 
-* Server-side APIs
-* Git branching workflow
-* Agile software development
+```md
+![alt text](assets/images/screenshot.png)
+```
 
-## Comprehension Check
 
-You will be employer-ready if you can answer the following questions:
-1. What is agile software development?
-2. What is an MVP?
-3. If you pull down a teammate's branch and you have merge conflicts, how do you handle it?
+## Credits
 
-## Learning Objectives
+List your collaborators, if any, with links to their GitHub profiles.
 
-You will be employer-competitive if you are able to:
+If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 
-* Speak technically about a feature you implemented in your project
-* Explain and execute git branching workflow in a collaborative project
-* Resolve merge conflicts
-* Explain agile software development
-* Design, build, and deploy a client-side web application using GitHub Pages
-* Prepare a professional presentation and repository README for your project
+If you followed tutorials, include links to those here as well.
 
 
-Your project should fulfill the following requirements:
+## License
 
-* Must use a CSS framework other than Bootstrap
+The last section of a good README is a license. This lets other developers know what they can and cannot do with your project. If you need help choosing a license, use [https://choosealicense.com/](https://choosealicense.com/)
 
-* Must be Deployed (GitHub Pages)
 
-* Must be interactive (i.e: accept and respond to user input) 
+---
 
-* Must have User Input Validation
+🏆 The sections listed above are the minimum for a good README, but your project will ultimately determine the content of this document. You might also want to consider adding the following sections.
 
-* Must use at least two server-side APIs
+## Badges
 
-* Must have some sort of repeating element (table, columns, etc)
+![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
 
-* Does not use alerts, confirms, or prompts (use modals).
+Badges aren't _necessary_, per se, but they demonstrate street cred. Badges let other developers know that you know what you're doing. Check out the badges hosted by [shields.io](https://shields.io/). You may not understand what they all represent now, but you will in time.
 
-* Must utilize at least one new library or technology that we haven’t discussed
+## Features
 
-* Must have a polished frontend / UI
+If your project has a lot of features, consider adding a heading called "Features" and listing them there.
 
-* Must meet good quality coding standards (indentation, scoping, naming)
+## Contributing
 
-* Use client-side storage to store persistent data.
+If you created an application or package and would like other developers to contribute it, you will want to add guidelines for how to do so. The [Contributor Covenant](https://www.contributor-covenant.org/) is an industry standard, but you can always write your own.
 
-* Be responsive.
+## Tests
 
-* Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
+Go the extra mile and write tests for your application. Then provide examples on how to run them.
 
-* Must utilize Git Branching / Merging. Git Branches based on Feature Built / GitHub Project Card, minimum of 30 meaningful commits per contributor.
+---
 
-* Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
-
-## Presentation Requirements
-
-Use this [project presentation template](https://docs.google.com/presentation/d/1Y4ROswmKLgKzBQcAp5ZaYDjx2eALETuXmnwUjcO6byc/edit?usp=sharing) to address the following: 
-
-* Elevator pitch: a one minute description of your application
-
-* Motivation for building this w/ Research you did: Into existing apps how is this different how is this the same?
-
-* Concept: What your user story? What was your motivation for development?
-
-* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
-
-* How did you build it out? w/ Infographic of your work-flow
-
-* Task Assignment => Who did what?
-
-* Team work-flow => Working Agreements Stand-ups Playbacks
-
-* User Stories => Features => task => Branches => Git Commits
-
-* Planning Wireframe w/ Side by Side of initial Wireframe vs. end product
-
-* Description of what it does w/ Visual Support: Gif / Image of your app doing it.
-
-* User Stories w/ Gif of your application UI completing that user story
-
-* API Research….
-
-* Demo: Show your stuff!
-
-* Directions for Future Development
-
-* Links to the deployed application and the GitHub repository
-
-
-## Grading Metrics 
-
-| Metric                | Weight | 
-| ---                   | ---    |
-| Technical Criteria    | 25%    |
-| Concept               | 10%    |
-| Deployment            | 20%    |
-| Repository Quality    | 10%    |
-| Application Quality   | 15%    |
-| Presentation          | 10%    |
-| Collaboration         | 10%    |
-
-
-## Grading Requirements
-
-This project is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 25%
-
-* Satisfies the following code requirements:
-
-	* Application uses at least two server-side APIs.
-
-    * Application uses client-side storage to store persistent data.
-
-    * Application doesn't use JS alerts, prompts, or confirms (uses modals instead).
-
-    * Application uses a CSS framework other than Bootstrap.
-
-    * Application is interactive (accepts and responds to user input)
-
-### Concept 10%
-
-* Application should be a unique and novel idea.
-
-* Your group should clearly and concisely articulate your project idea.
-
-### Deployment: 20%
-
-* Application deployed at live URL and loads with no errors.
-
-* Application GitHub URL submitted.
-
-### Repository Quality: 10%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains a quality README file with description, screenshot, and link to deployed application.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application is responsive.
-
-### Presentation 10%
-
-* Your group should present using Powerpoint or a similar presentation software.
-
-* Every group member should speak during the presentation.
-
-* Your presentation should follow the [Project Presentation Template]().
-
-### Collaboration 10%
-
-* There are no major disparities in the number of GitHub contributions between group members.
-
-
-## Submission on BCS
-
-Each member is required to submit the following:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository.
-
-## Helpful Links
-
-* 📖 [Agile Methodology](https://en.wikipedia.org/wiki/Agile_software_development)
-
-* 📖 [Git Branching](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows)
-
-* 📖 [Learn Enough Git to Be Dangerous](https://www.learnenough.com/git-tutorial/getting_started)
+© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.

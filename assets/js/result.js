@@ -1,29 +1,23 @@
-var API_KEY = 'fsq3b7GK2pzwGDNSHc+R0X6LmzlOcr4+aKCRMEfbmYXljlA=';
-var CLIENT_ID = '24EUE2MY4GC5SVPZRAQNE4BIJ4VWY5Y5EBX3NCAQFVEFNMGM';
-var CLIENT_SECRET = 'XTARJJ2DOUADKOAQ4GZJ1MY5KG53V2EKN3RQXGJBY0SNQXKH';
-
-
 var latitude = localStorage.getItem("lat");
 var longitude = localStorage.getItem("lon");
 
-var restaurantElements = document.querySelectorAll('.restaurant');
-var cityElement = document.querySelector('#searched-city');
-var cardContainer = document.querySelector('#restaurant-cards');
+var sunriseElement = document.querySelector('#sunrise-time');
+var sunsetElement = document.querySelector('#sunset-time');
 
-var searchRestaurants = (latitude, longitude) => {
-    return fetch(`https://api.foursquare.com/v2/venues/search?client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}&ll=${latitude},${longitude}&query=food&sortByPopularity=1&limit=3`, {
-
-      headers: {
-        'Content-Type': 'application/json',
-      }
-    })
-    .then(response => response.json())
-    .then(data => data.response.venues)
-    .catch(error => {
-    console.error(error);
-    return null;
-  });
+var searchSunriseSunset = () => {
+    return fetch('https://api.sunrise-sunset.org/json?lat=' + latitude + '&lng=' + longitude)
+        .then(response => response.json())
+        .then(data => {
+            const { sunrise, sunset } = data.results;
+            sunriseElement.textContent = sunrise;
+            sunsetElement.textContent = sunset;
+        })
+        .catch(error => {
+            console.error(error);
+            return null;
+        });
 };
+
 
 
 function displayCityName() {
@@ -35,7 +29,7 @@ function displayCityName() {
     }
 };
 
-function displayRestaurants() {
+function SunriseSunset() {
 
     // var restaurants = await searchRestaurants(latitude, longitude);
     // restaurantElements.forEach((element, index) => {
@@ -60,8 +54,8 @@ function displayRestaurants() {
 };
 
 displayCityName();
-displayRestaurants();
-searchRestaurants(latitude, longitude);
+SunriseSunset();
+searchSunriseSunset(latitude, longitude);
 
 
 var returnHomeBtn = document.querySelector("#return-home");

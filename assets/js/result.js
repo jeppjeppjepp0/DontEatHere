@@ -17,10 +17,14 @@ function displaySunriseSunset() {
 
     var sunInfo1;
     var sunInfo2;
+    searchSunriseSunset
 
     sunInfo1 = searchSunriseSunset(latitude, longitude, "today");
+    sunInfo1 = JSON.parse(localStorage.getItem('sunInfo'));
     sunInfo2 = searchSunriseSunset(latitude, longitude, "2023-07-21");
-
+    sunInfo2 = JSON.parse(localStorage.getItem('sunInfo'));
+console.log(sunInfo1);
+console.log(sunInfo2);
     document.querySelector("#sunrise-1").textContent = sunInfo1.sunrise;
     document.querySelector("#sunrise-2").textContent = sunInfo2.sunrise;
 
@@ -32,7 +36,7 @@ function searchSunriseSunset(lat, lon, day){
         .then(response => response.json())
         .then(data => {
             console.log(data);
-            return data.results;
+            localStorage.setItem('sunInfo', JSON.stringify(data.results));
         })
         .catch(error => {
             console.error(error);
@@ -42,7 +46,7 @@ function searchSunriseSunset(lat, lon, day){
 
 displayCityName();
 displaySunriseSunset();
-searchSunriseSunset(latitude, longitude);
+
 
 
 var returnHomeBtn = document.querySelector("#return-home");

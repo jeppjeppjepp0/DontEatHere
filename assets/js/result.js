@@ -23,6 +23,11 @@ function displaySunriseSunset() {
     console.log(sunInfo2);
     document.querySelector("#sunrise-1").textContent = sunInfo1.sunrise;
     document.querySelector("#sunrise-2").textContent = sunInfo2.sunrise;
+    document.querySelector('#sunset-1').textContent = sunInfo1.sunset;
+    document.querySelector('#sunset-2').textContent = sunInfo2.sunset;
+    document.querySelector('#day-length1').textContent = sunInfo1.day_length;
+    document.querySelector('#day-length2').textContent = sunInfo2.day_length;
+
 };
 
 function searchSunriseSunsetToday(lat, lon){

@@ -3,58 +3,45 @@ var longitude = localStorage.getItem("lon");
 
 var sunriseElement = document.querySelector('#sunrise-time');
 var sunsetElement = document.querySelector('#sunset-time');
+var cityElement = document.querySelector('#searched-city');
 
-var searchSunriseSunset = () => {
-    return fetch('https://api.sunrise-sunset.org/json?lat=' + latitude + '&lng=' + longitude)
+function displayCityName() {
+    if(localStorage.getItem('cityName')){
+        cityElement.textContent = localStorage.getItem('cityName');
+    }else {
+        cityElement.textContent = "UNKNOWN";
+    }
+};
+
+function displaySunriseSunset() {
+
+    var sunInfo1;
+    var sunInfo2;
+
+    sunInfo1 = searchSunriseSunset(latitude, longitude, "today");
+    sunInfo2 = searchSunriseSunset(latitude, longitude, "2023-07-21");
+
+    document.querySelector("#sunrise-1").textContent = sunInfo1.sunrise;
+    document.querySelector("#sunrise-2").textContent = sunInfo2.sunrise;
+
+
+};
+
+function searchSunriseSunset(lat, lon, day){
+    fetch('https://api.sunrise-sunset.org/json?lat=' + lat + '&lng=' + lon + '&date=' + day)
         .then(response => response.json())
         .then(data => {
-            const { sunrise, sunset } = data.results;
-            sunriseElement.textContent = sunrise;
-            sunsetElement.textContent = sunset;
+            console.log(data);
+            return data.results;
         })
         .catch(error => {
             console.error(error);
             return null;
         });
-};
-
-
-
-function displayCityName() {
-    if(localStorage.getItem('cityName')){
-        cityElement.textContent = localStorage.getItem('cityName');
-    }
-    else {
-        cityElement.textContent = "UNKNOWN";
-    }
-};
-
-function SunriseSunset() {
-
-    // var restaurants = await searchRestaurants(latitude, longitude);
-    // restaurantElements.forEach((element, index) => {
-        var nameElement = document.querySelector('.frame__title');
-        var ratingElement = document.querySelector('.frame__subtitle');
-        var userElement = document.querySelector('.frame__body .frame__title');
-        var reviewRatingElement = document.querySelector('.frame__body .frame__subtitle');
-        var reviewTextElement = document.querySelector('.frame__body blockquote');
-
-        //   nameElement.textContent = restaurants[index].name;
-        //   ratingElement.textContent = `Rating: ${restaurants[index].rating}`;
-        //   userElement.textContent = restaurants[index].reviews[0].user.name;
-        //   reviewRatingElement.textContent = `Rating: ${restaurants[index].reviews[0].rating}`;
-        //   reviewTextElement.textContent = restaurants[index].reviews[0].text;
-
-        console.log(nameElement);
-        console.log(ratingElement);
-        console.log(userElement);
-        console.log(reviewRatingElement);
-        console.log(reviewTextElement);
-    // });
-};
+}
 
 displayCityName();
-SunriseSunset();
+displaySunriseSunset();
 searchSunriseSunset(latitude, longitude);
 
 
